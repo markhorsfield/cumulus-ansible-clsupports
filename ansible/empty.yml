@@ -1,0 +1,7 @@
+---
+- hosts: leafs
+  user: cumulus
+  become: sudo
+
+  tasks:
+    - command: uname -a

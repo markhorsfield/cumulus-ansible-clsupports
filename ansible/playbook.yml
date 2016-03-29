@@ -1,0 +1,12 @@
+---
+#- hosts: all
+- hosts: switches
+  user: cumulus
+  become: sudo
+  roles:
+    - common
+#    - interfaces
+#    - loopbacks
+    - Test
+  handlers:
+    - include: handlers/main.yml

@@ -1,0 +1,12 @@
+[leafs]
+leaf-01 ansible_host=192.168.207.11
+leaf-02 ansible_host=192.168.207.12
+
+[spines]
+spine-01 ansible_host=192.168.207.13
+spine-02 ansible_host=192.168.207.14
+
+[switches:children]
+leafs
+spines 
+

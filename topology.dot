@@ -1,0 +1,13 @@
+graph dc1 {
+   "spine-01":"swp1" -- "leaf-01":"swp32"
+   "spine-02":"swp1" -- "leaf-01":"swp33"
+   "spine-01":"swp2" -- "leaf-02":"swp32"
+   "spine-02":"swp2" -- "leaf-02":"swp33"
+   "leaf-01":"swp1" -- "host-01":"eth1"
+   "leaf-02":"swp1" -- "host-02":"eth1"
+   "oob-01":"swp1" -- "leaf-01":"eth0"
+   "oob-01":"swp2" -- "leaf-02":"eth0"
+   "oob-01":"swp3" -- "spine-01":"eth0"
+   "oob-01":"swp4" -- "spine-02":"eth0"
+   "oob-01":"swp5" -- "cumulus1":"eth0"
+}

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#This file is transferred to the Cumulus VX and executed to re-map interfaces
+#Extra config COULD be added here but I would recommend against that to keep this file standard.
+
+sudo su
+#mv script and set permissions
+mv /home/vagrant/rename_eth_swp /etc/init.d/rename_eth_swp
+chmod +x /etc/init.d/rename_eth_swp
+
+#mv interface renaming file into place on disk
+mv /home/vagrant/remap_eth /etc/default/remap_eth
+
+#clobber existing interface config
+cp /home/vagrant/oob_config /etc/network/interfaces
+
+#reboot machine
+shutdown -r +1 &
