@@ -1,0 +1,10 @@
+---
+#- hosts: all
+- hosts: leaf-01
+  user: root
+  # The user must be root because it does not work with any other user. Tried with cumulus and vagrant, both fail
+  become: sudo
+  roles:
+    - clsupport
+  handlers:
+    - include: handlers/main.yml
